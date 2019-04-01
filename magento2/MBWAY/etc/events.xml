@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Ifthenpay_MbWay module dependency
+*
+* @category    Gateway Payment
+* @package     Ifthenpay_MbWay
+* @author      Ifthenpay
+* @copyright   Ifthenpay (http://www.ifthenpay.com)
+* @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+*/
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="payment_method_assign_data">
+        <observer name="ifthenpay_mb_way_gateway_data_assign" instance="Ifthenpay\MbWay\Observer\DataAssignObserver"/>
+    </event>
+    <event name="checkout_onepage_controller_success_action">
+        <observer name="checkout_controller_success_action" instance="Ifthenpay\MbWay\Observer\AfterPlaceOrderObserver"/>
+        <observer name="checkout_controller_success_action_sendmail" instance="Ifthenpay\MbWay\Observer\SendMailOnOrderSuccess"/>
+    </event>
+</config>
