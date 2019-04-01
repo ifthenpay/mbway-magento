@@ -17,7 +17,7 @@ Install using File Upload
 
 5. Click em **Component Manager**, procure pelo componente **Ifthenpay/MbWay** e active-o.
 
-6. Configurar o componente com a sua MBWAY key **Stores/Configuration/Payment Methods/Ifthenpay MbWay**
+6. Configurar o módulo com a sua MBWAY key **Stores/Configuration/Payment Methods/Ifthenpay MbWay**
 
 7. Enviar para ifthenpay o url e chave anti-phishing para ativar o callback
 
