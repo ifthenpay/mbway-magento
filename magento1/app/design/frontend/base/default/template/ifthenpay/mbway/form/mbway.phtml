@@ -1,0 +1,14 @@
+<div class="form-list" id="payment_form_<?php echo $this->getMethodCode() ?>" style="display:none;">
+  <div>
+    <img src="<?php echo $this->getSkinUrl('images/ifthenpay/mbway/mbway_icon.png'); ?>" style="margin-bottom: 10px; margin-top: 10px;">
+  </div>
+  <div>
+    <label><?php echo $this->__('Nr. Telemóvel Mbway') ?>*</label>
+    <span>
+      <input type="text" title="<?php echo $this->__('Nr. Telemóvel Mbway') ?>" name="payment[mbway_phone]" value="<?php echo $this->htmlEscape($this->getInfoData('mbway_phone')) ?>" />
+    </span>
+  </div>
+</div>
+<div>
+    <?php echo $this->getMethod()->getConfigData('message');?>
+</div>

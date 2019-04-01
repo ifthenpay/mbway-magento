@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Ifthenpay_Mbway</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license>Free</license>
+    <channel>local</channel>
+    <extends/>
+    <summary>Pagamento Mbway por Ifthenpay</summary>
+    <description>Pagamento Mbway por Ifthenpay</description>
+    <notes>Pagamento Mbway por Ifthenpay</notes>
+    <authors><author><name>Manuel Rocha</name><user>manuelrocha88</user><email>manuelrocha@manuelrocha.biz</email></author></authors>
+    <date>2018-11-20</date>
+    <time>11:54:36</time>
+    <contents><target name="magelocal"><dir name="Ifthenpay"><dir name="Mbway"><file name=".DS_Store" hash="860d83a3d61ead91d34cf7d9f44ceb8a"/><dir name="Block"><dir name="Form"><file name="Mbway.php" hash="8df14070dbe4e3fc964c8fc9a64b6c31"/></dir><dir name="Info"><file name="Mbway.php" hash="9accb89b78680e231e876d06162f911b"/></dir></dir><dir name="Helper"><file name="Data.php" hash="a45e68565f645fca2a92e43e54128972"/></dir><dir name="Model"><file name="AtivarCallback.php" hash="55c7f4f5a9cfd2c23f96301f89be112d"/><file name="Mbway.php" hash="896cd973c90370e70558d90c257285f8"/><file name="Observer.php" hash="66f63793adbcf31f7484592376aaae11"/><file name="PaymentAction.php" hash="92a3de785c875e7356504203f9b06fc2"/></dir><dir name="controllers"><file name="CallbackController.php" hash="039c35ff2b33de2881455af5d28b54e8"/></dir><dir name="etc"><file name="config.xml" hash="3f3a7a766c538dcdc9c1705aa5454836"/><file name="system.xml" hash="8094512eac5fed68aa7cc8479c30bacc"/></dir><dir name="sql"><dir name="mbway_setup"><file name="install-1.0.0.php" hash="17f83758ce01e4d0fed52ecca48c32fe"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="ifthenpay"><dir name="mbway"><file name=".DS_Store" hash="6966650653c3909abadc2c57de341f9c"/><dir name="form"><file name="mbway.phtml" hash="4067ac4894addb6931c79ddf3bcbb89f"/></dir><dir name="info"><file name="mbway.phtml" hash="5bc9bfb15b5b372d871543927abc04fd"/></dir></dir></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="ifthenpay"><dir name="mbway"><dir name="form"><file name="mbway.phtml" hash="9f7380a2417550cd7e57226478d680d7"/></dir><dir name="info"><file name="mbway.phtml" hash="4d635faf644416e0bf81d31728d65e00"/></dir></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Ifthenpay_Mbway.xml" hash="147f0c15798dea691e29d7971564b2c9"/></dir></target><target name="mageskin"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="images"><dir name="ifthenpay"><dir name="mbway"><file name="mbway_icon.png" hash="c8d7cee9ee9ca2f30eda5dec00d279bc"/></dir></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="images"><dir name="ifthenpay"><dir name="mbway"><file name="mbway_icon.png" hash="c8d7cee9ee9ca2f30eda5dec00d279bc"/></dir></dir></dir></dir></dir><dir name="default"><dir name="default"><dir name="images"><dir name="ifthenpay"><dir name="mbway"><file name="mbway_icon.png" hash="c8d7cee9ee9ca2f30eda5dec00d279bc"/></dir></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>7.2.0</max></php></required></dependencies>
+</package>

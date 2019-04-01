@@ -1,0 +1,10 @@
+<ul id="payment_info_<?php echo $this->getMethodCode() ?>">
+    <li>
+      <h4><?php echo $this->escapeHtml($this->getMethod()->getTitle()) ?></h4>
+      <div>
+        <img src="<?php echo $this->getSkinUrl('images/ifthenpay/mbway/mbway_icon.png'); ?>" style="margin-bottom: 10px; margin-top: 10px;">
+      </div>
+      <?php echo $this->__('Nº Telefone Mbway: ') . Mage::getModel('sales/order_payment')->load($this->getRequest()->getParam('order_id'))->getMbwayPhone() . "</br>" ?>
+      <?php echo $this->__('Total: ') . number_format(Mage::getModel('sales/order_payment')->load($this->getRequest()->getParam('order_id'))->getAmountOrdered(), 2) . "</br>" ?>
+    </li>
+</ul>

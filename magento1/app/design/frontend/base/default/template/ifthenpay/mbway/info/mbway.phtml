@@ -1,0 +1,14 @@
+<p class="subtitle"><strong><?php echo $this->escapeHtml($this->getMethod()->getTitle()) ?></strong></p>
+<div>
+    <img src="<?php echo $this->getSkinUrl('images/ifthenpay/mbway/mbway_icon.png'); ?>" style="margin-bottom: 10px; margin-top: 10px;">
+  </div>
+<?php if ($_specificInfo = $this->getSpecificInformation()):?>
+<dl class="payment-info">
+    <?php foreach ($_specificInfo as $_label => $_value):?>
+        <dt><?php echo $this->escapeHtml($_label)?></dt>
+        <dd><?php echo nl2br(implode($this->getValueAsArray($_value, true), "\n"))?></dd>
+    <?php endforeach; ?>
+</dl>
+<?php endif;?>
+
+<?php echo $this->getChildHtml()?>
