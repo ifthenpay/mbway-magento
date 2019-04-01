@@ -1,7 +1,6 @@
 MBWAY payment gateway extension for Magento 2
 ===========================================================
-![MBWAY](https://ifthenpay.com/img/mbway.png) ![Ifthenpay](![Ifthenpay](https://raw.githubusercontent.com/manuelrocha88/magento2-Ifthenpay_Multibanco/master/itplogo.png))
-
+![MBWAY](https://ifthenpay.com/img/mbway.png)
 Extensão oficial Ifthenpay MBWAY para o Magento 2.
 
 Install using File Upload
