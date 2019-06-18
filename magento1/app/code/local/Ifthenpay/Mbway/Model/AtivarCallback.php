@@ -27,32 +27,24 @@ class Ifthenpay_Mbway_Model_AtivarCallback extends Mage_Core_Model_Config_Data
         $skinUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);
         $result = "<p id='mbway_callback_info'></p>";
         $result .= "<script type='text/javascript'>
-            function render_callback_info()
-            {
-                var infomb = $('mbway_callback_info');
+	    function render_callback_info()
+	    {
+		var infomb = $('mbway_callback_info');
 				 var field_value = $('payment_mbway_active_callback').getValue();
-                    switch (field_value.toLowerCase())
-                    {
-                        case '1':
+		    switch (field_value.toLowerCase())
+		    {
+			case '1':
 
-                            infomb.innerHTML ='<h2>Instru&ccedil;&otilde;es Callback</h2>Para ativar o callback ter&aacute; de comunicar &agrave; Ifthenpay os seguintes elementos:<br/>- Chave MBWay<br/>- 4 &uacute;ltimos d&iacute;gitos da chave de backoffice (Fornecida no momento da ades&atilde;o. A mesma &eacute; constitu&iacute;da por 16 d&iacute;gitos num&eacute;ricos agrupados 4 a 4 apresentando o seguinte formato: 0000-0000-0000-0000)<br/>- Url de Callback: " . Mage::getBaseUrl() . "mbway/callback/check/key/[CHAVE_ANTI_PHISHING]/referencia/[REFERENCIA]/idpedido/[ID_TRANSACAO]/valor/[VALOR]/estado/[ESTADO]<br/>- Chave Anti-Phishing: " . $chaveap . "<br/><br/>Estes elementos dever&atilde;o ser comunicados via email (<a href=\"mailto:ifthenpay@ifthenpay.com?subject=Ativar Callback\">ifthenpay@ifthenpay.com</a>) com o assunto <strong>Ativar Callback</strong>.';
-                            break;
-                        case '0':
+			    infomb.innerHTML ='<h2>Instru&ccedil;&otilde;es Callback</h2>Para ativar o callback ter&aacute; de comunicar &agrave; Ifthenpay os seguintes elementos:<br/>- Chave MBWay<br/>- 4 &uacute;ltimos d&iacute;gitos da chave de backoffice (Fornecida no momento da ades&atilde;o. A mesma &eacute; constitu&iacute;da por 16 d&iacute;gitos num&eacute;ricos agrupados 4 a 4 apresentando o seguinte formato: 0000-0000-0000-0000)<br/>- Url de Callback: " . Mage::getBaseUrl() . "mbway/callback/check/key/[CHAVE_ANTI_PHISHING]/referencia/[REFERENCIA]/idpedido/[ID_TRANSACAO]/valor/[VALOR]/estado/[ESTADO]<br/>- Chave Anti-Phishing: " . $chaveap . "<br/><br/>Estes elementos dever&atilde;o ser comunicados via email (<a href=\"mailto:ifthenpay@ifthenpay.com?subject=Ativar Callback\">ifthenpay@ifthenpay.com</a>) com o assunto <strong>Ativar Callback</strong>.';
+			    break;
+			case '0':
 
-                            infomb.innerHTML = '';
-                            break;
-                    }
-            }
-
-            function init_comment()
-            {
-                render_callback_info();
-                $('payment_mbway_active_callback').observe('change', function(){
-                    render_callback_info();
-                });
-            }
-            document.observe('dom:loaded', function(){init_comment();});
-            </script>";
+			    infomb.innerHTML = '';
+			    break;
+		    }
+	    }
+	    render_callback_info();
+           </script>";
 
         return $result;
     }
