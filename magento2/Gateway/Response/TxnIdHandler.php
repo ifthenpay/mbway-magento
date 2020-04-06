@@ -40,9 +40,7 @@ class TxnIdHandler implements HandlerInterface
         if ($response->SetPedidoResult->IdPedido) {
             $payment->setAdditionalInformation('ID Pedido', $response->SetPedidoResult->IdPedido);
             $payment->setTransactionId($payment->getAdditionalInformation('ID Pedido'));
-            if ($response->SetPedidoResult->Estado !== '000') {
-                $this->setMbWayErrorMessage($response, $payment);
-            }
+            $this->setMbWayErrorMessage($response, $payment);
         } else {
             $this->setMbWayErrorMessage($response, $payment);
         }
@@ -53,7 +51,11 @@ class TxnIdHandler implements HandlerInterface
     }
     public function setMbWayErrorMessage($response, $payment)
     {
-        $msg = $response->SetPedidoResult->Estado . ' ' . $response->SetPedidoResult->MsgDescricao;
-        $payment->setAdditionalInformation('Erro', $msg);
+        if ($response->SetPedidoResult->Estado === '000') {
+            $payment->setAdditionalInformation('Mensagem', 'Pedido mbway colocado com sucesso');
+        } else {
+            $msg = $response->SetPedidoResult->Estado . ' ' . $response->SetPedidoResult->MsgDescricao;
+            $payment->setAdditionalInformation('Mensagem', $msg);
+        }
     }
 }
