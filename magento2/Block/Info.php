@@ -18,7 +18,7 @@ class Info extends \Magento\Payment\Block\Info
     {
         $informations['Telemovel'] = $this->getInfo()->getAdditionalInformation('phone_number');
         $informations['ID Pedido'] = $this->getInfo()->getAdditionalInformation('ID Pedido');
-        $informations['Erro'] = $this->getInfo()->getAdditionalInformation('Erro');
+        $informations['Mensagem'] = $this->getInfo()->getAdditionalInformation('Mensagem');
         return (object)$informations;
     }
 
