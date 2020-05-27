@@ -40,7 +40,7 @@ class AfterPlaceOrderObserver extends AbstractDataAssignObserver
         $methodTitle = $method->getTitle();
 
         $save = false;
-        if($methodTitle == "MB WAY") {
+        if(stripos($methodTitle, "way") !== FALSE) {
             if ($currentState !== $order::STATE_NEW) {
                 $order->setState($order::STATE_PENDING_PAYMENT);
                 $order->setStatus('pending');
