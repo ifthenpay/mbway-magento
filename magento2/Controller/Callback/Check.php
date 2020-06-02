@@ -76,12 +76,13 @@ class Check extends Action
 
         if (number_format($callBack_params->valor, 2) === $order_value) {
             
-            $this->createInvoiceService->createInvoice($order);
-
             $order->setState(\Magento\Sales\Model\Order::STATE_PROCESSING)
                 ->setStatus($order->getConfig()->getStateDefaultStatus(\Magento\Sales\Model\Order::STATE_PROCESSING));
 
             $order->save();
+            
+            $this->createInvoiceService->createInvoice($order);
+            
             return ["success" => true, "message" => "Pagamento foi concluido com sucesso."];
         } else {
             return ["error" => "O ID não corresponde a nenhuma transação desta encomenda."];
