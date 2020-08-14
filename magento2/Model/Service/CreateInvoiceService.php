@@ -61,6 +61,7 @@ class CreateInvoiceService
 
         if($order->canInvoice()) {
             $invoice = $this->invoiceService->prepareInvoice($order);
+            $invoice->setRequestedCaptureCase(\Magento\Sales\Model\Order\Invoice::CAPTURE_OFFLINE);
             $invoice->register();
             $invoice->save();
 
@@ -75,6 +76,7 @@ class CreateInvoiceService
             $order->addStatusHistoryComment(
                 __('Added invoice #%1 to customer order', $invoice->getId())
             )->setIsCustomerNotified(false)
+            ->setIsInProcess(true)
             ->save();
         }
 
