@@ -20,7 +20,7 @@ class TransferFactory implements TransferFactoryInterface {
     /**
      * @var TransferBuilder
      */
-    private $ifthenpayWebService = 'https://www.ifthenpay.com/mbwayws/IfthenPayMBW.asmx?wsdl';
+    private $ifthenpayWebService = 'https://mbway.ifthenpay.com/IfthenPayMBW.asmx?wsdl';
 
     private $transferBuilder;
 
