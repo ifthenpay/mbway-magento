@@ -106,7 +106,7 @@ class Ifthenpay_Mbway_Model_Mbway extends Mage_Payment_Model_Method_Abstract
   }
 
   private function callIfthenpayMbwayApi($mbway_key, $nr_mbway, $nr_encomenda, $descricao, $amount) {
-    $url_api = "https://www.ifthenpay.com/mbwayws/IfthenPayMBW.asmx?wsdl";
+    $url_api = "https://mbway.ifthenpay.com/IfthenPayMBW.asmx?wsdl";
     $dados_api = array(
       "MbWayKey" => $mbway_key,
       "canal" => "03",
