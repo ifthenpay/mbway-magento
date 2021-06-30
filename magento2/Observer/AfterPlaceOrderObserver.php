@@ -36,7 +36,7 @@ class AfterPlaceOrderObserver extends AbstractDataAssignObserver
         $currentState = $order->getState();
 
         $save = false;
-        if ($currentState !== $order::STATE_NEW) {
+        if ($this->order->getPayment()->getMethod === 'ifthenpay_mb_way' && $currentState !== $order::STATE_NEW) {
             $order->setState($order::STATE_PENDING_PAYMENT);
             $order->setStatus('pending');
             $save = true;
