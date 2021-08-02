@@ -35,7 +35,8 @@ class DataRequest implements BuilderInterface
         $paymentDO = $buildSubject['payment'];
         $payment = $paymentDO->getPayment();
         $phone_number = $payment->getAdditionalInformation('phone_number');
-        if (strlen($phone_number) != 9 || substr($phone_number, 0, 1) != 9) {
+        $phone_number = str_replace('#', '', $phone_number);
+        if (strlen($phone_number) != 9 || substr($phone_number, 0, 1) != 9 || !is_numeric($phone_number)) {
             throw new PaymentException(__('Número de telemóvel inválido '));
         }
         return [
