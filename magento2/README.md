@@ -11,7 +11,7 @@ Install using File Upload
 
 2. Ir ao root do Magento 2, dentro da pasta **app** e criar a seguinte estrutura **code/Ifthenpay/MbWay**
 
-3. Colocar o ficheiro do conteúdo zip dentro da pasta **MbWay** criada no passo 2.
+3. Colocar o conteúdo do ficheiro zip dentro da pasta **MbWay** criada no passo 2.
 
 4. Aceder à sua **Magento 2 Administration**, click **System** e depois em **Web Setup Wizard**
 
