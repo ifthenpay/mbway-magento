@@ -54,12 +54,12 @@ class SendMailOnOrderSuccess extends AbstractDataAssignObserver
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-        $orderIds = $observer->getEvent()->getOrderIds();
-        if(count($orderIds))
-        {
-            $this->checkoutSession->setForceOrderMailSentOnSuccess(true);
-            $order = $this->orderModel->create()->load($orderIds[0]);
-            $this->orderSender->send($order, true);
-        }
+        // $orderIds = $observer->getEvent()->getOrderIds();
+        // if(count($orderIds))
+        // {
+        //     $this->checkoutSession->setForceOrderMailSentOnSuccess(true);
+        //     $order = $this->orderModel->create()->load($orderIds[0]);
+        //     $this->orderSender->send($order, true);
+        // }
     }
 }
