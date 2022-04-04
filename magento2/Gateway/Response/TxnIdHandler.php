@@ -37,16 +37,15 @@ class TxnIdHandler implements HandlerInterface
         $paymentDO = $handlingSubject['payment'];
         $payment = $paymentDO->getPayment();
         $order = $paymentDO->getOrder();
-        if ($response->SetPedidoResult->IdPedido) {
+               
+        if ($response->SetPedidoResult->IdPedido && $response->SetPedidoResult->Valor == $order->getGrandTotalAmount()) {
+            $payment->setIsTransactionClosed(false);
+            $payment->setIsTransactionPending(true);
             $payment->setAdditionalInformation('ID Pedido', $response->SetPedidoResult->IdPedido);
             $payment->setTransactionId($payment->getAdditionalInformation('ID Pedido'));
             $this->setMbWayErrorMessage($response, $payment);
         } else {
             $this->setMbWayErrorMessage($response, $payment);
-        }
-        $payment->setIsTransactionClosed(false);
-        if ($response->SetPedidoResult->IdPedido && $response->SetPedidoResult->Valor == $order->getGrandTotalAmount()) {
-            $payment->setIsTransactionClosed(true);
         }
     }
     public function setMbWayErrorMessage($response, $payment)
