@@ -75,7 +75,10 @@ class Check extends Action
             return ["error" => "O valor da encomenda é inferior ao valor pago!"];
 
         if (number_format($callBack_params->valor, 2) === $order_value) {
-            
+            $payment = $order->getPayment();
+            $payment->setIsTransactionClosed(true);
+            $payment->setIsTransactionPending(false);
+            $payment->save();
             $order->setState(\Magento\Sales\Model\Order::STATE_PROCESSING)
                 ->setStatus($order->getConfig()->getStateDefaultStatus(\Magento\Sales\Model\Order::STATE_PROCESSING));
 
